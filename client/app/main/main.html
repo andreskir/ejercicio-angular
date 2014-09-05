@@ -1,0 +1,23 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>Top sellers por categoría</h1>
+  </div>
+</header>
+
+<div class="container">
+  <br/>
+  <ul class="list-group col-lg-offset-3 col-lg-6">
+    <li class="list-group-item" ng-repeat="category in categories">
+      <a href="#">{{category.name}}</a>
+    </li>
+  </ul>
+</div>
+
+<footer class="footer">
+  <div class="container">
+      <p><a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
+         <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
+  </div>
+</footer>
