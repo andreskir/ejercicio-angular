@@ -2,18 +2,21 @@
 
 <header class="hero-unit" id="banner">
   <div class="container">
-    <h1>Top sellers por categoría</h1>
+    <h1>Top 3 sellers por categoría</h1>
   </div>
 </header>
 
-<div class="container">
-  <br/>
-  <ul class="list-group col-lg-offset-3 col-lg-6">
-    <li class="list-group-item" ng-repeat="category in categories">
-      <a href="#">{{category.name}}</a>
+<section class="col-lg-offset-3 col-lg-6">
+  <select class="form-control" style="margin-top:20px" ng-model="selectedCategory" ng-options="category.name for category in categories" ng-change="itemsByCategory()">
+    <option value="" disabled>Seleccione una categoria</option>
+  </select>
+  <ul class="list-group" style="margin-top:20px"> 
+    <li class="list-group-item" ng-repeat="x in sellersAndEarnings | orderBy:'-earn' | limitTo:3">
+      {{x.seller}}
+      <em class="pull-right"> {{x.earn | currency}}</em>
     </li>
   </ul>
-</div>
+</section>
 
 <footer class="footer">
   <div class="container">
