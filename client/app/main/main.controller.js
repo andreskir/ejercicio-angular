@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('topMeliSellersApp')
-  .controller('MainCtrl', function ($scope,$http,$resource, CategoryFactory) {
+  .controller('MainCtrl', function ($scope,$http, CategoryFactory) {
     CategoryFactory.query().$promise.then(function(categories) {
       $scope.categories = categories;
     });
